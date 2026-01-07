@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f0f12;
+  --foreground: #ededed;
+  --primary: #8b5cf6;
+  /* Violet */
+  --primary-hover: #7c3aed;
+  --secondary: #27272a;
+  --accent: #f43f5e;
+  /* Rose */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-violet-600 hover:bg-violet-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-violet-500/20 active:scale-95;
+  }
+
+  .glass-panel {
+    @apply bg-zinc-900/60 backdrop-blur-xl border border-zinc-800 rounded-2xl shadow-2xl;
+  }
+
+  .input-field {
+    @apply w-full bg-zinc-950/50 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-violet-500 transition-all;
+  }
+}
+
+/* Animations */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+
+  50% {
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite;
+}
